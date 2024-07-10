@@ -3,7 +3,7 @@ import uuid
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from server.apps.utils import BaseModel
+from server.apps.services import BaseModel
 
 
 class Participant(BaseModel):

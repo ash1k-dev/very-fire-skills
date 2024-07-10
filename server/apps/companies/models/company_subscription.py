@@ -1,14 +1,24 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from server.apps.utils import BaseModel
+from server.apps.services import BaseModel
 
 
 class CompanySubscription(BaseModel):
     """Модель подписки компании"""
-    company = models.ForeignKey(to='companies.Company', on_delete=models.CASCADE, related_name='company_subscriptions', verbose_name=_("Компания"))
-    subscription = models.ForeignKey(to='companies.Subscription', on_delete=models.CASCADE, related_name='company_subscriptions', verbose_name=_("Подписка"))
 
+    company = models.ForeignKey(
+        to="companies.Company",
+        on_delete=models.CASCADE,
+        related_name="company_subscriptions",
+        verbose_name=_("Компания"),
+    )
+    subscription = models.ForeignKey(
+        to="companies.Subscription",
+        on_delete=models.CASCADE,
+        related_name="company_subscriptions",
+        verbose_name=_("Подписка"),
+    )
 
     class Meta:
         verbose_name = _("Подписка компании")

@@ -47,6 +47,7 @@ class ViewSetGetMixin:
             return super().get_queryset().filter(creator=self.request.user)
 
 
-
-class CustomModelViewSet(ViewSetSerializerMixin, ViewSetCreateMixin, ViewSetGetMixin, ModelViewSet):
+class CustomModelViewSet(
+    ViewSetSerializerMixin, ViewSetCreateMixin, ViewSetGetMixin, ModelViewSet
+):
     pass

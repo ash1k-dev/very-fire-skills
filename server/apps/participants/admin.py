@@ -40,7 +40,6 @@ class ParticipantSurveyAdmin(admin.ModelAdmin):
 
 @admin.register(Result)
 class ResultAdmin(admin.ModelAdmin):
-    list_display = ["id", "participant_survey", "result", "is_send_task"]
-    list_select_related = ["participant_survey"]
+    list_display = ["id", "result", "is_send_task"]
     list_filter = ["is_send_task"]
     search_fields = ["result"]
