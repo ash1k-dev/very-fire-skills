@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from server.apps.participants.models import (
     Answer,
     Participant,

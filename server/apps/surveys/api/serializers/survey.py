@@ -1,7 +1,10 @@
 from rest_framework import serializers
 
-from server.apps.companies.api.serializers.company import CompanyParticipantSerializer
+from server.apps.companies.api.serializers.company import (
+    CompanyParticipantSerializer,
+)
 from server.apps.surveys.models import Survey
+
 
 class SurveySerializer(serializers.ModelSerializer):
     """Сериализатор для модели опроса"""

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from server.apps.surveys.models import Survey, Question, Task, Option
+from server.apps.surveys.models import Option, Question, Survey, Task
 
 
 @admin.register(Survey)

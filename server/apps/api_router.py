@@ -1,9 +1,17 @@
 from rest_framework.routers import SimpleRouter
 
 from server.apps.companies.api.views import CompanyViewSet, SubscriptionViewSet
-from server.apps.participants.api.views import AnswerViewSet, ParticipantSurveyViewSet, ResultViewSet
-from server.apps.surveys.api.views import SurveyViewSet, QuestionViewSet, OptionViewSet, TaskViewSet
-
+from server.apps.participants.api.views import (
+    AnswerViewSet,
+    ParticipantSurveyViewSet,
+    ResultViewSet,
+)
+from server.apps.surveys.api.views import (
+    OptionViewSet,
+    QuestionViewSet,
+    SurveyViewSet,
+    TaskViewSet,
+)
 
 app_name = 'api'
 

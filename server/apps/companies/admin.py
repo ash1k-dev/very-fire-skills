@@ -1,6 +1,10 @@
 from django.contrib import admin
 
-from server.apps.companies.models import Company, Subscription, CompanySubscription
+from server.apps.companies.models import (
+    Company,
+    CompanySubscription,
+    Subscription,
+)
 
 
 @admin.register(Company)

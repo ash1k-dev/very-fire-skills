@@ -1,7 +1,11 @@
 from rest_framework import serializers
 
-from server.apps.surveys.api.serializers.option import OptionSerializer, OptionParticipantSerializer
+from server.apps.surveys.api.serializers.option import (
+    OptionParticipantSerializer,
+    OptionSerializer,
+)
 from server.apps.surveys.models import Question
+
 
 class QuestionSerializer(serializers.ModelSerializer):
     """Сериализатор для модели вопроса"""

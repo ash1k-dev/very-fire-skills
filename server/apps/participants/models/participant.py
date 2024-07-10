@@ -1,8 +1,9 @@
+import uuid
+
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from server.apps.utils import BaseModel
 
-import uuid
+from server.apps.utils import BaseModel
 
 
 class Participant(BaseModel):

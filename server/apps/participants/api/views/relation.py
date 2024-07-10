@@ -1,21 +1,30 @@
-from django.db.models import Prefetch, Subquery, OuterRef
-from rest_framework import viewsets, status
+import django_filters
+from django.db.models import OuterRef, Prefetch, Subquery
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import status, viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
 from server.apps.participants.api.serializers import AnswerSerializer
-from server.apps.participants.api.serializers.relation import ParticipantSurveySerializer
+from server.apps.participants.api.serializers.relation import (
+    ParticipantSurveySerializer,
+)
 from server.apps.participants.models import Answer, Result
 from server.apps.participants.models.relation import ParticipantSurvey
-from server.apps.surveys.api.serializers import QuestionSerializer, OptionParticipantSerializer
-from server.apps.surveys.api.serializers.question import QuestionParticipantSerializer
-from server.apps.surveys.api.serializers.survey import SurveyParticipantSerializer
-from server.apps.surveys.models import Survey, Question
+from server.apps.surveys.api.serializers import (
+    OptionParticipantSerializer,
+    QuestionSerializer,
+)
+from server.apps.surveys.api.serializers.question import (
+    QuestionParticipantSerializer,
+)
+from server.apps.surveys.api.serializers.survey import (
+    SurveyParticipantSerializer,
+)
+from server.apps.surveys.models import Question, Survey
 from server.apps.utils import CustomModelViewSet, IsCreatorOrStaffPermission
 
-import django_filters
-from django_filters.rest_framework import DjangoFilterBackend
 
 class ParticipantSurveyFilter(django_filters.FilterSet):
     """Фильтр для задач"""

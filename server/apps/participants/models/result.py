@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+
 from server.apps.utils import BaseModel
+
 
 class Result(BaseModel):
     """Модель результата теста"""

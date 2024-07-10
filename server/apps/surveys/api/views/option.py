@@ -1,11 +1,10 @@
+import django_filters
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.permissions import IsAuthenticated
 
 from server.apps.surveys.api.serializers import OptionSerializer
-import django_filters
-from django_filters.rest_framework import DjangoFilterBackend
-
 from server.apps.surveys.models import Option
-from server.apps.utils import IsCreatorOrStaffPermission, CustomModelViewSet
+from server.apps.utils import CustomModelViewSet, IsCreatorOrStaffPermission
 
 
 class OptionFilter(django_filters.FilterSet):

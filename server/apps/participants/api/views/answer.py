@@ -4,7 +4,7 @@ from rest_framework.response import Response
 
 from server.apps.participants.api.serializers.answer import AnswerSerializer
 from server.apps.participants.models import Answer, ParticipantSurvey
-from server.apps.surveys.models import Question, Option
+from server.apps.surveys.models import Option, Question
 
 
 class AnswerViewSet(viewsets.ModelViewSet):
