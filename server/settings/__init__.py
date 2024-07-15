@@ -28,6 +28,7 @@ _base_settings = (
     "components/csp.py",
     "components/caches.py",
     "components/llm.py",
+    "components/sentry.py",
     # Select the right env:
     "environments/{0}.py".format(_ENV),
     # Optionally override some settings:
