@@ -16,33 +16,35 @@ from django.urls import include, path
 from django.views.generic import TemplateView
 from health_check import urls as health_urls
 
+from server.apps.llm.api.views import TextProcessorView
+
 admin.autodiscover()
 
 urlpatterns = [
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-
-
+    path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
     # API:
-    path('api/v1/', include('server.apps.api_router')),
-
-
+    path("api/v1/", include("server.apps.api_router")),
+    path("api/v1/process-text/", TextProcessorView.as_view()),
     # Health checks:
-    path('health/', include(health_urls)),
-
+    path("health/", include(health_urls)),
     # django-admin:
-    path('admin/doc/', include(admindocs_urls)),
-    path('admin/', admin.site.urls),
-
+    path("admin/doc/", include(admindocs_urls)),
+    path("admin/", admin.site.urls),
     # Text and xml static files:
-    path('robots.txt', TemplateView.as_view(
-        template_name='txt/robots.txt',
-        content_type='text/plain',
-    )),
-    path('humans.txt', TemplateView.as_view(
-        template_name='txt/humans.txt',
-        content_type='text/plain',
-    )),
-
+    path(
+        "robots.txt",
+        TemplateView.as_view(
+            template_name="txt/robots.txt",
+            content_type="text/plain",
+        ),
+    ),
+    path(
+        "humans.txt",
+        TemplateView.as_view(
+            template_name="txt/humans.txt",
+            content_type="text/plain",
+        ),
+    ),
 ]
 
 if settings.DEBUG:  # pragma: no cover
@@ -51,7 +53,7 @@ if settings.DEBUG:  # pragma: no cover
 
     urlpatterns = [
         # URLs specific only to django-debug-toolbar:
-        path('__debug__/', include(debug_toolbar.urls)),
+        path("__debug__/", include(debug_toolbar.urls)),
         *urlpatterns,
         # Serving media files in development only:
         *static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT),
