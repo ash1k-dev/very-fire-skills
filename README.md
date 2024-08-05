@@ -1,32 +1,29 @@
-# very-fire
+Описание:
 
-Very Fire
+Приложение для создания тестов для проверки знаний
 
-This project was generated with [`wemake-django-template`](https://github.com/wemake-services/wemake-django-template). Current template version is: [bbdf67f](https://github.com/wemake-services/wemake-django-template/tree/bbdf67fe3710a6103216ddf6cf46e5c739cc475e). See what is [updated](https://github.com/wemake-services/wemake-django-template/compare/bbdf67fe3710a6103216ddf6cf46e5c739cc475e...master) since then.
-
-
-[![wemake.services](https://img.shields.io/badge/%20-wemake.services-green.svg?label=%20&logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC%2FxhBQAAAAFzUkdCAK7OHOkAAAAbUExURQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP%2F%2F%2F5TvxDIAAAAIdFJOUwAjRA8xXANAL%2Bv0SAAAADNJREFUGNNjYCAIOJjRBdBFWMkVQeGzcHAwksJnAPPZGOGAASzPzAEHEGVsLExQwE7YswCb7AFZSF3bbAAAAABJRU5ErkJggg%3D%3D)](https://wemake-services.github.io)
-[![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-python-styleguide)
-
-
-## Prerequisites
-
-You will need:
-
-- `python3.11` (see `pyproject.toml` for full version)
-- `postgresql` with version `15`
-- Latest `docker`
+Поддерживается следующий функционал:
+- Создание и управление подписками для компаний;
+- Создание "одноразовых" тестов (с уникальным id) для каждого опрашиваемого (для защиты от повторного доступа);
+- Автоматическая отправка дополнительных (тестовых) заданий в случае набора нужного количества баллов;
+- Уведомление создателя опроса о результатах на почту (для компании);
+- Формирование статистики по тестам (для компании)
 
 
-## Development
+Настройка:
+1. Клонируйте репозиторий:
+   - Выполните команду git clone https://github.com/ash1k-dev/very-fire-skills
 
-When developing locally, we use:
+2. Установите нужные для работы библиотеки:
+   - Выполните команду poetry install
 
-- [`editorconfig`](http://editorconfig.org/) plugin (**required**)
-- [`poetry`](https://github.com/python-poetry/poetry) (**required**)
-- [`pyenv`](https://github.com/pyenv/pyenv)
+3. Настройте приложение:
+   - Установите PostgreSQL и создайте базу данных
+   - Зарегистрируйтесь в сервисе Sentry (https://sentry.io/welcome/) для получения информации о работе кода
+   - Создайте и добавьте данные в файл '.env' (используйте как пример '.env.template' из папки config)
 
+4. Запустите приложение:
+   - Запустите приложение с помощью python manage.py runserver
 
-## Documentation
-
-Full documentation is available here: [`docs/`](docs).
+   
+Автор проекта: Роман Третьяков(https://github.com/ash1k-dev)
